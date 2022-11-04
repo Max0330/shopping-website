@@ -4,6 +4,7 @@ import { Home  }from './pages/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UpdateHome from './pages/UpdateHome';
 import SellerHome from './pages/sellerhomepage';
+import SellerAccount from './pages/sellerAccount';
 import Login from './pages/logIn';
 import ForgetPassword from "../src/pages/forgetpassword";
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/UpdateHome' element = {<UpdateHome />} />
           <Route exact path="/Login" element={<Login/>} />
           <Route exact path="/sellerHome" element={<SellerHome/>}/>
+          <Route exact path="/sellerAccount" element={<SellerAccount/>}/>
           <Route exact path="/Login/forgetpassword" element={<ForgetPassword/>} />
         </Routes>
       </BrowserRouter>

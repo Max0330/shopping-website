@@ -1,11 +1,26 @@
 import { useState } from "react"
 import Uploadimg from "../components/uploadImg"
 import styled from "styled-components";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer"
 const Div = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-margin:30px;
+margin-top:30px;
+margin-bottom:30px;
+border-bottom: 1px solid #ccc;
+padding: 10px
+`
+const Div1 = styled.div`
+padding-top: 2vw;
+padding-bottom: 2vw;
+border: 1px black;
+margin-left:20vw;
+margin-right:20vw;
+margin-top:20px;
+background: white;
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
 `
 const Input = styled.input`
 width: 500px;
@@ -55,6 +70,15 @@ width: 500px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease-out;
     `;
+    const Button1 = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid black;
+  color: black;
+  margin: 1em;
+  margin-left: 133em;
+  padding: 0.25em 1em;
+`
 export default function SellerHome() {
     const[productTitle, setProductTitle] = useState("");
     const[productDetail, setProductDetail] = useState("");
@@ -73,7 +97,12 @@ export default function SellerHome() {
         console.log({productTitle, productDetail, sellPrice, productImg})
     }
     return (
-        <div>
+        <>
+        <style>{'body { background-color: #f0eeec; }'}</style>
+        <Navbar/>
+        <Button1>back</Button1>
+        <Div1>
+           
             <Div>
                 <Input value={productTitle} onChange={handleTitle} placeholder="type your product name"/>
             </Div>
@@ -82,19 +111,20 @@ export default function SellerHome() {
                 
                 
             </Div>
-            <div style={{paddingLeft:"35vw", margin:"18px"}}>
+            <div style={{paddingLeft:"16vw"}}>
             <Uploadimg productImg={productImg} setProductImg={setProductImg}/>
             </div>
 
             <Div>
                 <Input type="number" placeholder="type your product price" value={sellPrice} onChange={handlePrice}/>
             </Div>
-            <div style={{paddingLeft:"35vw", margin:"18px"}}>
+            <div style={{paddingLeft:"16vw"}}>
             <Button onClick={handleList}>List Your Item</Button>
             </div>
             
-
-
-        </div>
+        </Div1>
+        
+        </>
+        
     )
 }

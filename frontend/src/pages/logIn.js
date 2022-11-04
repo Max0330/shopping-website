@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import Navbar from "../components/Navbar";
 const jump = keyframes`
       from{
         transform: translateY(0)
@@ -107,7 +108,7 @@ export default function Login() {
     e.preventDefault();
     console.log(infos);
     if(infos.role === "seller"){
-      navigate("/sellerHome")
+      navigate("/sellerAccount")
     }
   };
 
@@ -125,6 +126,7 @@ export default function Login() {
 
   return (
     <>
+    <Navbar/>
       <Title>Shopping Site</Title>
       <Wrapper>
         <Form onSubmit={handleSubmit}>

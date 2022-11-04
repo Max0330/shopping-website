@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Search, ShoppingCartOutlined } from '@material-ui/icons'
-import {Badge} from '@material-ui/core';
-import {useNavigate} from 'react-router-dom';
+import { Search, ShoppingCartOutlined } from '@material-ui/icons'
+import { Badge } from '@material-ui/core';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     height: 80px;
@@ -72,34 +72,38 @@ const Navbar = () => {
     const RouteLogin = () => {
         navigate('/login');
     }
-  return (
-    <Container>
-        <Wrapper>
-            <Left>
-                <Language>EN</Language>
-                <SearchContainer>
-                    <Input />
-                    <Search style = {{color: "gray", fontsize: 16}}/>
-                </SearchContainer>
-            </Left>
-            <Center>
-                <Logo>Amazon</Logo>
-            </Center>
-            <Right>
-                
-                <MenuItem onClick={RouteRegister}> REGISTER</MenuItem>
-                
-                <MenuItem onClick={RouteLogin}>SIGN IN</MenuItem>
-                <MenuItem>
-                    <Badge badgeContent = {0} color = "primary" overlap="rectangular">
-                        <ShoppingCartOutlined />
-                    </Badge>
-                </MenuItem>
-            </Right>
-        </Wrapper>
 
-    </Container>
-  )
+    return (
+        <Container>
+            <Wrapper>
+                <Left>
+                    <Language>EN</Language>
+                    <SearchContainer>
+                        <Input />
+                        <Search style={{ color: "gray", fontsize: 16 }} />
+                    </SearchContainer>
+                </Left>
+                <Center>
+                    <Logo>Amazon</Logo>
+                </Center>
+                <Right>
+                    
+                    <MenuItem onClick={RouteRegister}> REGISTER</MenuItem>
+
+                    <MenuItem onClick={RouteLogin}>SIGN IN</MenuItem>
+                    <MenuItem>
+                        <Badge badgeContent={0} color="primary" overlap="rectangular">
+                            <ShoppingCartOutlined />
+                        </Badge>
+                    </MenuItem>
+                    
+
+                </Right>
+                    
+            </Wrapper>
+
+        </Container>
+    )
 }
 
 export default Navbar;
