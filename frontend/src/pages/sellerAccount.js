@@ -1,6 +1,21 @@
 import styled from "styled-components";
 import {useNavigate} from 'react-router-dom';
 import Navbar from "../components/Navbar";
+import {
+    CardWrapper,
+    CardHeader,
+    CardHeading,
+    CardBody,
+    CardIcon,
+    CardFieldset,
+    CardInput,
+    CardOptionsItem,
+    CardOptions,
+    CardOptionsNote,
+    CardButton,
+    CardLink
+  } from "../components/Card";
+  import fakeimg from "../imgs/fakeimg.png"
 const Button = styled.button`
 max-width: 100%;
 padding: 11px 13px;
@@ -26,7 +41,89 @@ export default function SellerAccount(){
     return(
         <div>
             <Navbar/>
+            <div style={{display:"flex"}}>
+            <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+            </div>
+            <div style={{textAlign:"center"}}>
             <Button onClick={handleSell}>Sell Your Product</Button>
+            </div>
+            
         </div>
     )
 }
