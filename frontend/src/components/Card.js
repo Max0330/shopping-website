@@ -37,13 +37,7 @@ export const CardFieldset = styled.fieldset`
     margin-top: 24px;
   }
 
-  &:nth-last-of-type(2) {
-    margin-top: 32px;
-  }
 
-  &:last-of-type {
-    text-align: center;
-  }
 `;
 
 export const CardInput = styled.input`

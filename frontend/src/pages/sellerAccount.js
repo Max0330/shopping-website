@@ -41,6 +41,7 @@ export default function SellerAccount(){
     return(
         <div>
             <Navbar/>
+            <h3>Things You are Selling</h3>
             <div style={{display:"flex"}}>
             <CardWrapper>
         <CardHeader>
@@ -48,6 +49,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -59,6 +63,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -70,6 +77,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -81,6 +91,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -92,6 +105,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -103,6 +119,9 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
@@ -114,12 +133,116 @@ export default function SellerAccount(){
         </CardHeader>
 
         <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
           <CardFieldset>
             $100.00
           </CardFieldset>
         </CardBody>
       </CardWrapper>
             </div>
+            <div style={{display:"flex"}}>
+            <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+      <CardWrapper>
+        <CardHeader>
+          <CardHeading><img src={fakeimg}/></CardHeading>
+        </CardHeader>
+
+        <CardBody>
+        <CardFieldset>
+            name
+          </CardFieldset>
+          <CardFieldset>
+            $100.00
+          </CardFieldset>
+        </CardBody>
+      </CardWrapper>
+            </div>
+
             <div style={{textAlign:"center"}}>
             <Button onClick={handleSell}>Sell Your Product</Button>
             </div>
