@@ -13,11 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.usc.beans.Order;
 import com.usc.beans.OrderProduct;
-import com.usc.beans.Product;
 import com.usc.dao.OrderDao;
-import com.usc.dao.OrderProductDao;
-import com.usc.dao.ProductDao;
-import com.usc.dao.UserDao;
 import com.usc.http.Response;
 
 @Service
@@ -26,55 +22,41 @@ public class OrderService {
 	@Autowired
 	OrderDao orderDao;
 
-	@Autowired
-	ProductDao productDao;
-
-	@Autowired
-	OrderProductDao orderProductDao;
-
-	@Autowired
-	UserDao userDao;
-
-	public List<Order> getOrders(Authentication authentication) {
-		if (isAdmin(authentication.getAuthorities())) {
+	public List<Order> getOrders(Order order, Authentication authentication) {
+		if(isAdmin(authentication.getAuthorities())) {
 			return orderDao.findAll();
 		} else {
-			return orderDao.findAllByUser(userDao.findByUsername(authentication.getName()));
+			return orderDao.findAllByUser(order.getUser());
 		}
 	}
 
 	public Response addOrder(Order order, Authentication authentication) {
-		for (OrderProduct op : order.getPurchases()) {
-			Product product = (Product) productDao.findByProductname(op.getProductName());
-			if (op.getQuantity() > product.getStock()) {
-				return new Response(false, "Not enough Products in Stock");
+		if((order.getUser().getUsername().equals(authentication.getName()) || isAdmin(authentication.getAuthorities()))) {
+			for(OrderProduct op : order.getPurchases()) {
+				if(op.getQuantity() > op.getProduct().getStock()) {
+					return new Response(false, "Not enough Products in Stock");
+				}
 			}
-			op.setProduct(product);
-			op.setOrder(order);
+			orderDao.save(order);
+		}else {
+			return new Response(false);
 		}
-		order.setUser(userDao.findByUsername(authentication.getName()));
-		orderDao.save(order);
 		return new Response(true);
 	}
 
 	public Response editOrder(Order order) {
 		Order o = orderDao.findById(order.getId()).get();
-		for(OrderProduct op : o.getPurchases()) {
-			orderProductDao.deleteById(op.getId());
-		}
 		o.setPurchase_Date(order.getPurchase_Date());
-		for (OrderProduct op : order.getPurchases()) {
-			Product product = (Product) productDao.findByProductname(op.getProductName());
-			if (op.getQuantity() > op.getProduct().getStock()) {
+		for(OrderProduct op : order.getPurchases()) {
+			if(op.getQuantity() > op.getProduct().getStock()) {
 				return new Response(false, "Not enough Products in Stock");
 			}
-			op.setProduct(product);
 		}
 		o.setPurchases(order.getPurchases());
 		orderDao.save(o);
 		return new Response(true);
 	}
-
+	
 	public boolean isAdmin(Collection<? extends GrantedAuthority> profiles) {
 		boolean isAdmin = false;
 		for (GrantedAuthority profile : profiles) {

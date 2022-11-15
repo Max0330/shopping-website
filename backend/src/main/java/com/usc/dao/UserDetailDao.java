@@ -7,5 +7,5 @@ import com.usc.beans.UserDetail;
 
 @Repository
 public interface UserDetailDao extends JpaRepository<UserDetail,Integer> {
-	UserDetail findByName(String name);
+	
 }

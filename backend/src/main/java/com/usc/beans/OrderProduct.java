@@ -29,8 +29,6 @@ public class OrderProduct {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id")
 	private Product product;
-	@Column(name = "productName", nullable = true)
-	private String productName;
 	public OrderProduct() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -41,12 +39,6 @@ public class OrderProduct {
 		this.order = order;
 		this.product = product;
 	}
-	public OrderProduct(int quantity, String productName) {
-		super();
-		this.quantity = quantity;
-		this.productName = productName;
-	}
-	
 	public int getId() {
 		return id;
 	}
@@ -70,12 +62,6 @@ public class OrderProduct {
 	}
 	public void setProduct(Product product) {
 		this.product = product;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
 	}
 	@Override
 	public String toString() {

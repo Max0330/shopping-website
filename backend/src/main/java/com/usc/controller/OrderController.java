@@ -30,9 +30,9 @@ public class OrderController {
 	
 	@GetMapping
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
-	public List<Order> getOrders(Authentication authentication){
+	public List<Order> getOrders(@RequestBody Order order, Authentication authentication){
 		System.out.println("GetOrders is invoking!");
-		return orderService.getOrders(authentication);
+		return orderService.getOrders(order, authentication);
 	}
 	
 	@GetMapping("/{id}")
